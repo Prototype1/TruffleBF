@@ -11,3 +11,5 @@ An idea would be to allow a language to switch the backed array (int array per d
 its own primivite arrays via BrainFuck. 
 
 License is MIT 
+
+The used Truffle Version was build by me will asap change it using maven when Truffle 0.9 is available in maven repo.
