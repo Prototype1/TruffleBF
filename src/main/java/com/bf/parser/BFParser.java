@@ -71,6 +71,7 @@ public final class BFParser {
                         instructionStack.peek().add(new PrintCellNode(source.createSection("Print Cell", currLine, currPos, 1)));
                         break;
                     case READ_INPUT:
+                        instructionStack.peek().add(new ReadInputNode(source.createSection("Print Cell", currLine, currPos, 1)));
                         break;
                     case LOOP_BEG:
                         instructionStack.push(new ArrayList<>());
