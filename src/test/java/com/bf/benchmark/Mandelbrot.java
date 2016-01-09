@@ -169,7 +169,6 @@ public class Mandelbrot {
     private final RootCallTarget callTarget = Truffle.getRuntime().createCallTarget(rootNode);
 
 
-
     @Benchmark
     public void mandelbrot(Blackhole hole) {
         //prepare terminal
