@@ -166,14 +166,14 @@ public class Mandelbrot {
 
     private final BFRootNode rootNode = new BFParser().parse(context, Source.fromText(mandelbrot, "mandelbrot"));
 
-
     private final RootCallTarget callTarget = Truffle.getRuntime().createCallTarget(rootNode);
+
 
 
     @Benchmark
     public void mandelbrot(Blackhole hole) {
-        Object call = callTarget.call();
-
-        hole.consume(call);
+        //prepare terminal
+        System.out.println();
+        hole.consume(callTarget.call());
     }
 }

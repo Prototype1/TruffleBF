@@ -93,10 +93,9 @@ public final class BFParser {
 
                         break;
                     case '\r':
-                        currLine++;
-                        break;
                     case '\n':
                         currLine++;
+                        currPos = 1;
                         break;
                     default:
                         System.out.println("Ignore invalid char: " + currChar);
