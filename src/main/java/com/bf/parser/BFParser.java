@@ -10,7 +10,6 @@ import com.oracle.truffle.api.source.SourceSection;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Stack;
 
@@ -79,7 +78,7 @@ public final class BFParser {
                     case LOOP_END:
 
                         if (instructionStack.isEmpty()) {
-                            throw new IllegalArgumentException("A loop was opened but has never been closed");
+                            throw new IllegalArgumentException("A loop was closed but has never been opened");
                         }
 
                         List<BFNode> loopNodes = instructionStack.pop();
@@ -104,7 +103,13 @@ public final class BFParser {
             throw new RuntimeException(e);
         }
 
-        return new BFRootNode(instructionStack.stream().flatMap(Collection::stream).toArray(BFNode[]::new), context, source.createSection("start", 1));
+        if (instructionStack.size() > 1) {
+            throw new IllegalArgumentException("Loop was opened but has never been closed");
+        }
+
+        List<BFNode> nodes = instructionStack.pop();
+
+        return new BFRootNode(nodes.toArray(new BFNode[nodes.size()]), context, source.createSection("start", 1));
     }
 
 

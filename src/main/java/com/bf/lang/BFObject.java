@@ -26,6 +26,8 @@ public class BFObject extends ObjectType implements TruffleObject, ForeignAccess
 
     @Override
     public boolean canHandle(TruffleObject obj) {
+
+
         return false;
     }
 
@@ -86,6 +88,7 @@ public class BFObject extends ObjectType implements TruffleObject, ForeignAccess
 
     @Override
     public CallTarget accessMessage(Message unknown) {
+
 
         return null;
     }

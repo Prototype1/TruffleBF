@@ -62,7 +62,7 @@ public class BFLanguage extends TruffleLanguage<BFContext> {
     @Override
     protected boolean isObjectOfLanguage(Object o) {
 
-        return o instanceof int[];
+        return BFTypeSystem.isBoolHeap(o) || BFTypeSystem.isByteHeap(o) || BFTypeSystem.isCharHeap(o) || BFTypeSystem.isIntHeap(o) || BFTypeSystem.isLongHeap(o) || BFTypeSystem.isShortHeap(o);
     }
 
     @Override

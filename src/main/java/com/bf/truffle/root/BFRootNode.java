@@ -17,9 +17,6 @@ import com.oracle.truffle.api.source.SourceSection;
 @NodeInfo(language = "BrainFuck", description = "Root of all Brain Fucks :)")
 public class BFRootNode extends RootNode {
 
-
-    private final static String ARR_ID = "ARR";
-
     @Children
     public final BFNode[] nodes;
 

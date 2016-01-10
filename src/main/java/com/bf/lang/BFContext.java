@@ -10,10 +10,7 @@ public final class BFContext extends ExecutionContext {
     public final Object heap;
 
     public BFContext(final Object heap) {
-
         this.heap = heap;
-
-
     }
 
 }
