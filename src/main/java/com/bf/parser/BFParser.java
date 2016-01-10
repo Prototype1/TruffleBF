@@ -79,7 +79,7 @@ public final class BFParser {
                     case LOOP_END:
 
                         if (instructionStack.isEmpty()) {
-                            throw new IllegalArgumentException("A loop was opened but was never closed");
+                            throw new IllegalArgumentException("A loop was opened but has never been closed");
                         }
 
                         List<BFNode> loopNodes = instructionStack.pop();
@@ -89,8 +89,6 @@ public final class BFParser {
                         BodyNode loopNode = new BodyNode(loopNodes.toArray(new BFNode[loopNodes.size()]), src);
 
                         instructionStack.peek().add(new BFLoopNode(loopNode, src));
-
-
                         break;
                     case '\r':
                     case '\n':
