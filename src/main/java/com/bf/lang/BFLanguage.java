@@ -18,6 +18,7 @@ import java.io.IOException;
 /**
  * Created by moritz on 06.01.2016.
  */
+@TruffleLanguage.Registration(name = "BF", version = "0.1", mimeType = "application/x-bf")
 public class BFLanguage extends TruffleLanguage<BFContext> {
     /**
      * Constants which are Context independent

@@ -9,6 +9,8 @@ import com.oracle.truffle.api.source.Source;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
+import java.util.Arrays;
+
 /**
  * Created by moritz on 08.01.2016.
  */
@@ -169,8 +171,16 @@ public class Mandelbrot {
     private final RootCallTarget callTarget = Truffle.getRuntime().createCallTarget(rootNode);
 
 
+    @Setup
+    public void resetHeap() {
+        Arrays.fill((int[]) context.heap, 0);
+    }
+
     @Benchmark
     public void mandelbrot(Blackhole hole) {
+
+        //find something better
+        resetHeap();
         //prepare terminal
         System.out.println();
         hole.consume(callTarget.call());

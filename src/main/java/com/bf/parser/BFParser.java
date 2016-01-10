@@ -43,7 +43,7 @@ public final class BFParser {
         int nextChar;
 
         int currLine = 1;
-        int currPos = 1;
+        int currPos = 0;
         try {
             while ((nextChar = tokenizer.read()) != -1) {
 
@@ -93,7 +93,7 @@ public final class BFParser {
                     case '\r':
                     case '\n':
                         currLine++;
-                        currPos = 1;
+                        currPos = 0;
                         break;
                     default:
                         System.out.println("Ignore invalid char: " + currChar);

@@ -1,6 +1,7 @@
 package com.bf.truffle;
 
 import com.bf.truffle.root.BFNode;
+import com.oracle.truffle.api.CompilerAsserts;
 import com.oracle.truffle.api.CompilerDirectives;
 import com.oracle.truffle.api.Truffle;
 import com.oracle.truffle.api.frame.VirtualFrame;
@@ -24,6 +25,8 @@ public final class BFLoopNode extends BFNode {
 
     @Override
     public void executeVoid(VirtualFrame frame) {
+
+        CompilerAsserts.compilationConstant(loopNode);
 
         loopNode.executeLoop(frame);
     }
