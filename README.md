@@ -10,7 +10,7 @@ The language interop is not yet implemented neither is the debugger.
 An idea would be to allow a language to switch the backed array (int array per default) per context so each language can manipulate
 its own primitive arrays via BrainFuck.
 
-The used Truffle Version was build by me will asap change it using maven, when Truffle 0.9 is available in maven repo.
+The used Truffle Version was build by me will asap change it using maven, when Truffle 0.9 is public available in maven repo.
 
 Apache 2.0 License 
 
